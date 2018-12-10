@@ -1,0 +1,14 @@
+# idea
+.idea/
+.vscode/
+
+# dependencies
+/node_modules
+package-lock.json
+
+# misc
+.DS_Store
+npm-debug.log*
+
+# source-map
+**/*.map

@@ -1,0 +1,26 @@
+{
+  "name": "charles-helper",
+  "version": "1.0.0",
+  "description": "Print some helpful help for Charles",
+  "files": [
+    "bin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ouxu/charles-helper.git"
+  },
+  "scripts": {
+    "start": "node ./bin/index.js"
+  },
+  "bin": {
+    "charles-helper": "./bin/index.js"
+  },
+  "keywords": [],
+  "author": "out_xu@outlook.com",
+  "license": "ISC",
+  "dependencies": {
+    "boxen": "^2.0.0",
+    "exec-series": "^1.0.3",
+    "semble": "^0.1.1"
+  }
+}
