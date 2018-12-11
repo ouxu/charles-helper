@@ -9,6 +9,8 @@ const sslStr = require('../src/sslStr')
 
 const interfaces = os.networkInterfaces();
 
+const QR = "https://qc-az3lrvhte.now.sh/?"
+
 const getNetworkAddress = () => {
 	for (const name of Object.keys(interfaces)) {
 		for (const interface of interfaces[name]) {
@@ -24,7 +26,7 @@ const getNetworkAddress = () => {
   const ip = getNetworkAddress();
   const ssl = 'http://chls.pro/ssl';
 
-  const cmdStr4ip = `echo "${ip}" | curl -F-=\\<- qrenco.de`;
+  const cmdStr4ip = `echo "${QR}${ip}" | curl -F-=\\<- qrenco.de`;
 
   exec(cmdStr4ip, (err, stdout) => {
     if (err) {
@@ -41,7 +43,7 @@ const getNetworkAddress = () => {
 
     const spiritualWords = semble([
       [
-        boxen(`${ip}\n\n${stdout}`, { borderColor: 'green', align: 'center' }),
+        boxen(`quickly copy ${ip}\n\n${stdout}`, { borderColor: 'green', align: 'center' }),
         boxen(`${ssl}\n\n${sslStr}`, { borderColor: 'green', align: 'center' }),
       ],
     ]);
