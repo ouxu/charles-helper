@@ -3,7 +3,8 @@
   "version": "1.0.1",
   "description": "Print some helpful help for Charles",
   "files": [
-    "bin"
+    "bin",
+    "src"
   ],
   "repository": {
     "type": "git",
