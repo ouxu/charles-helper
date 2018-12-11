@@ -1,6 +1,6 @@
 {
   "name": "charles-helper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Print some helpful help for Charles",
   "files": [
     "bin",
