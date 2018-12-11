@@ -1,9 +1,12 @@
 #!/usr/bin/env node
 
-const boxen = require('boxen');
 const os = require('os');
+const boxen = require('boxen');
+
+const { exec } = require('child_process');
 const { semble } = require('semble');
-const execSeries = require('exec-series');
+const sslStr = require('../src/sslStr')
+
 const interfaces = os.networkInterfaces();
 
 const getNetworkAddress = () => {
@@ -17,30 +20,29 @@ const getNetworkAddress = () => {
 	}
 };
 
-
 (function charlesHelper() {
   const ip = getNetworkAddress();
   const ssl = 'http://chls.pro/ssl';
 
   const cmdStr4ip = `echo "${ip}" | curl -F-=\\<- qrenco.de`;
-  const cmdStr4ssl = `echo "${ssl}" | curl -F-=\\<- qrenco.de`;
 
-  execSeries([cmdStr4ip, cmdStr4ssl], (err, stdouts) => {
+  exec(cmdStr4ip, (err, stdout) => {
     if (err) {
       const spiritualWords = semble([
         [
-          boxen(`${ip}`, { padding: 1, borderColor: 'green', align: 'center' }),
-          boxen(`${ssl}`, { padding: 1, borderColor: 'green', align: 'center' }),
+          boxen(`${ip}\n\nget QR code error`, { padding: 1, borderColor: 'green', align: 'center' }),
+          boxen(`${ssl}\n\n${sslStr}`, { borderColor: 'green', align: 'center' }),
         ],
       ]);
       // eslint-disable-next-line no-console
       console.log(spiritualWords);
+      return;
     }
 
     const spiritualWords = semble([
       [
-        boxen(`${ip}\n\n${stdouts[0]}`, { borderColor: 'green', align: 'center' }),
-        boxen(`${ssl}\n\n${stdouts[1]}`, { borderColor: 'green', align: 'center' }),
+        boxen(`${ip}\n\n${stdout}`, { borderColor: 'green', align: 'center' }),
+        boxen(`${ssl}\n\n${sslStr}`, { borderColor: 'green', align: 'center' }),
       ],
     ]);
     // eslint-disable-next-line no-console
