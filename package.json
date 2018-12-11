@@ -20,7 +20,6 @@
   "license": "ISC",
   "dependencies": {
     "boxen": "^2.0.0",
-    "exec-series": "^1.0.3",
     "semble": "^0.1.1"
   }
 }
