@@ -9,7 +9,7 @@ const sslStr = require('../src/sslStr')
 
 const interfaces = os.networkInterfaces();
 
-const QR = "https://qc-az3lrvhte.now.sh/?"
+const QR = "https://qc.now.sh/?"
 
 const getNetworkAddress = () => {
 	for (const name of Object.keys(interfaces)) {
