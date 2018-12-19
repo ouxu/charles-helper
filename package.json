@@ -21,6 +21,7 @@
   "license": "ISC",
   "dependencies": {
     "boxen": "^2.0.0",
+    "qrcode-generator": "^1.4.1",
     "semble": "^0.1.1"
   }
 }
