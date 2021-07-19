@@ -11,7 +11,8 @@
     "url": "https://github.com/ouxu/charles-helper.git"
   },
   "scripts": {
-    "start": "node ./bin/index.js"
+    "start": "node ./bin/index.js",
+    "release": "standard-version"
   },
   "bin": {
     "charles-helper": "./bin/index.js"
@@ -23,5 +24,8 @@
     "boxen": "^2.0.0",
     "qrcode-generator": "^1.4.1",
     "semble": "^0.1.1"
+  },
+  "devDependencies": {
+    "standard-version": "^9.3.1"
   }
 }
