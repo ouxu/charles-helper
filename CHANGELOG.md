@@ -1,6 +1,13 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [1.3.0](https://github.com/ouxu/charles-helper/compare/v1.2.0...v1.3.0) (2021-07-19)
+
+
+### Features
+
+* 支持ssr二维码 ([64d3666](https://github.com/ouxu/charles-helper/commit/64d3666668a5f8a801da750e0aa296e2a68fda60))
 
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/ouxu/charles-helper/compare/v1.1.1...v1.2.0) (2018-12-19)
