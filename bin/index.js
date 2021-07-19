@@ -32,14 +32,18 @@ const createQrcode = (text) => {
 (function charlesHelper() {
   const ip = getNetworkAddress();
   const ssl = 'http://chls.pro/ssl';
+  const ssr = `${ip}:8888`;
+  const base64Str = Buffer.from(ssr).toString('base64');
 
   const ipQr = createQrcode(`${QR}${ip}`);
   const sslQr = createQrcode(ssl);
+  const ssrQr = createQrcode(`http://${base64Str}`);
 
   const spiritualWords = semble([
     [
       boxen(`quickly copy ${ip}\n\n${ipQr}`, { borderColor: 'green', align: 'center' }),
-      boxen(`${ssl}\n\n${sslQr}`, { borderColor: 'green', align: 'center' })
+      boxen(`${ssl}\n\n${sslQr}`, { borderColor: 'green', align: 'center' }),
+      boxen(`ssrQr\n\n${ssrQr}`, { borderColor: 'green', align: 'center' })
     ]
   ]);
   // eslint-disable-next-line no-console
